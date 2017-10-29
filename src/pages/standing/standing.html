@@ -19,7 +19,7 @@
       <ion-list-header>
         Team
       </ion-list-header>
-      <ion-item *ngFor = "let player of playerList$ | async" *ngIf="{{player.category}} == 'Lelaki'">
+      <ion-item *ngFor = "let player of playerList$ | async">
         {{player.team_name}}
       </ion-item>
     </ion-list>

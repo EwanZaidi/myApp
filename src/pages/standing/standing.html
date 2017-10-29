@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Standing</ion-title>
+  </ion-toolbar>
+  <ion-segment [(ngModel)]="standing" color="danger" class="bg-white">
+    <ion-segment-button value="man">
+      <ion-icon name="man"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="woman">
+      <ion-icon name="woman"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+
+<ion-content padding class="bg-gray" [ngSwitch]="standing">
+  <ion-list *ngSwitchCase="'man'">
+    <ion-list>
+      <ion-list-header>
+        Team
+      </ion-list-header>
+      <ion-item *ngFor = "let player of playerList$ | async" *ngIf="{{player.category}} == 'Lelaki'">
+        {{player.team_name}}
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  <ion-list *ngSwitchCase="'woman'">
+    <h1>Woman Standing Page</h1>
+  </ion-list>
+</ion-content>

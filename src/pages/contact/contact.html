@@ -1,17 +1,24 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar>
     <ion-title>
-      Contact
+      Team
     </ion-title>
-  </ion-navbar>
+  </ion-toolbar>
+  <ion-segment [(ngModel)]="gender" color="danger" class="bg-white">
+    <ion-segment-button value="male">
+      <ion-icon name="man"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="female">
+      <ion-icon name="woman"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
+<ion-content padding class="bg-gray" [ngSwitch]="gender">
+  <ion-list *ngSwitchCase="'male'">
+    <h1>Male Team</h1>
+  </ion-list>
+  <ion-list *ngSwitchCase="'female'">
+    <h1>Woman Team</h1>
   </ion-list>
 </ion-content>

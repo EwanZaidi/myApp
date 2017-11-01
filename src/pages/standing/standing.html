@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="danger">
     <ion-title>Standing</ion-title>
   </ion-toolbar>
-  <ion-segment [(ngModel)]="standing" color="danger" class="bg-white">
+  <ion-segment [(ngModel)]="standing" color="danger">
     <ion-segment-button value="man">
       <ion-icon name="man"></ion-icon>
     </ion-segment-button>
@@ -15,16 +15,179 @@
 
 <ion-content padding class="bg-gray" [ngSwitch]="standing">
   <ion-list *ngSwitchCase="'man'">
-    <ion-list>
-      <ion-list-header>
-        Team
-      </ion-list-header>
-      <ion-item *ngFor = "let player of playerList$ | async">
-        {{player.team_name}}
-      </ion-item>
-    </ion-list>
+    <ion-card>
+      <ion-card-header>
+        Group 1
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2 class="headerer" text-wrap>
+              No
+            </ion-col>
+            <ion-col col-4 class="headerer" text-wrap>
+              Team
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Win
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Lost
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Points
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-2 class="coll" text-wrap>
+              1
+            </ion-col>
+            <ion-col col-4 class="coll" text-wrap>
+              Malikai
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              1
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              0
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              2
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        Group 2
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2 class="headerer" text-wrap>
+              No
+            </ion-col>
+            <ion-col col-4 class="headerer" text-wrap>
+              Team
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Win
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Lost
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Points
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-2 class="coll" text-wrap>
+              1
+            </ion-col>
+            <ion-col col-4 class="coll" text-wrap>
+              Merotai
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              1
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              0
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              2
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
   <ion-list *ngSwitchCase="'woman'">
-    <h1>Woman Standing Page</h1>
+    <ion-card>
+      <ion-card-header>
+        Group 1
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2 class="headerer" text-wrap>
+              No
+            </ion-col>
+            <ion-col col-4 class="headerer" text-wrap>
+              Team
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Win
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Lost
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Points
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-2 class="coll" text-wrap>
+              1
+            </ion-col>
+            <ion-col col-4 class="coll" text-wrap>
+              KK City
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              1
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              0
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              2
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        Group 2
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2 class="headerer" text-wrap>
+              No
+            </ion-col>
+            <ion-col col-4 class="headerer" text-wrap>
+              Team
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Win
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Lost
+            </ion-col>
+            <ion-col col-2 class="headerer" text-wrap>
+              Points
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-2 class="coll" text-wrap>
+              1
+            </ion-col>
+            <ion-col col-4 class="coll" text-wrap>
+              Kelombong
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              1
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              0
+            </ion-col>
+            <ion-col col-2 class="coll" text-wrap text-center>
+              2
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>

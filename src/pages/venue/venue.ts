@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
+
 /**
  * Generated class for the VenuePage page.
  *
@@ -15,11 +17,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VenuePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private launchNavigator: LaunchNavigator) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VenuePage');
+  }
+
+  navigate(address) {
+    this.launchNavigator.navigate(address);
+    console.log(address);
   }
 
 }

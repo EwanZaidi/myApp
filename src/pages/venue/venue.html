@@ -6,13 +6,54 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>Venue</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="bg-gray">
+  <ion-row>
+    <ion-card>
+
+      <img src="assets/imgs/tamanbagan.jpg" class="imgh100">
+
+      <ion-item>
+        <ion-icon name="basketball" item-start small></ion-icon>
+        <h2>Taman Bagan Court</h2>
+        <p text-wrap>No. 60, Jalan Bagan 13, Taman Bagan, Pulau Pinang, Taman Bagan, 12000 Butterworth, Penang</p>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button icon-left clear item-start (click)="navigate('Kuil Sri Saiva Muniswarar,No. 60, Jalan Bagan 13, Taman Bagan, Pulau Pinang, Taman Bagan, 12000 Butterworth, Penang')">
+          <ion-icon name="navigate"></ion-icon>
+          Start
+        </button>
+      </ion-item>
+
+    </ion-card>
+  </ion-row>
+
+  <ion-row>
+    <ion-card>
+
+      <img src="assets/imgs/akiracourt.jpg" class="imgh100">
+
+      <ion-item>
+        <ion-icon name="basketball" item-start small></ion-icon>
+        <h2>Akira Court</h2>
+        <p text-wrap>Jalan Tenggiri, Taman Tenggiri Seberang Jaya, 13700 Butterworth, Pulau Pinang</p>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button icon-left clear item-start (click)="navigate('Akira Basketball Court')">
+          <ion-icon name="navigate"></ion-icon>
+          Start
+        </button>
+      </ion-item>
+
+    </ion-card>
+  </ion-row>
 
 </ion-content>

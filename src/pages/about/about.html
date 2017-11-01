@@ -1,63 +1,24 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Games
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar color="danger">
+    <ion-title>Games</ion-title>
+  </ion-toolbar>
+  <ion-segment [(ngModel)]="standing" color="danger" class="bg-white">
+    <ion-segment-button value="man">
+      <ion-icon name="man"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="woman">
+      <ion-icon name="woman"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
-<ion-content padding-vertical class="bg-gray">
-  <ion-card>
-    <ion-card-content>
-      <ion-row>
-        <ion-col col-3 align-self-center text-center>
-          <img src="assets/imgs/logo.png" style="height:100px;"/>
-          <h2>Rockets</h2>
-        </ion-col>
-        <ion-col col-2 align-self-center text-center>
-          <h1>192</h1>
-        </ion-col>
-        <ion-col col-2 align-self-center text-center>
-          <h3 ion-text color="danger">FINAL</h3>
-        </ion-col>
-        <ion-col col-2 align-self-center text-center>
-          <h1>210</h1>
-        </ion-col>
-        <ion-col col-3 align-self-center text-center>
-          <img src="assets/imgs/logo.png" style="height:100px;"/>
-          <h2>Hornet</h2>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-      <ion-card-content>
-        <ion-row>
-          <ion-col col-3 align-self-center text-center>
-            <img src="assets/imgs/logo.png" style="height:100px;"/>
-            <h2>Mumbai</h2>
-          </ion-col>
-          <ion-col col-2 align-self-center text-center>
-            <h1>192</h1>
-          </ion-col>
-          <ion-col col-2 align-self-center text-center>
-            <h3 ion-text color="danger">FINAL</h3>
-          </ion-col>
-          <ion-col col-2 align-self-center text-center>
-            <h1>210</h1>
-          </ion-col>
-          <ion-col col-3 align-self-center text-center>
-            <img src="assets/imgs/logo.png" style="height:100px;"/>
-            <h2>Delhi</h2>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
+
+<ion-content padding class="bg-gray" [ngSwitch]="standing">
+  <ion-list *ngSwitchCase="'man'">
     <ion-card>
-        <ion-card-content>
+      <ion-card-content>
           <ion-row>
             <ion-col col-3 align-self-center text-center>
-              <img src="assets/imgs/logo.png" style="height:100px;"/>
               <h2>Vamos</h2>
             </ion-col>
             <ion-col col-2 align-self-center text-center>
@@ -70,10 +31,20 @@
               <h1>210</h1>
             </ion-col>
             <ion-col col-3 align-self-center text-center>
-              <img src="assets/imgs/logo.png" style="height:100px;"/>
               <h2>Black Steel</h2>
             </ion-col>
           </ion-row>
-        </ion-card-content>
-      </ion-card>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngSwitchCase="'woman'">
+      <ion-list-header color="header">
+        Girls Team
+      </ion-list-header>
+        <div *ngFor = "let player of playerList$ | async">
+          <ion-item text-wrap class="fs11" *ngIf = "player.category == 'Perempuan'" detail-push navPush="TeamDetailPage" [navParams]="{player: player}">
+            {{player.team_name}}
+          </ion-item>
+      </div>
+  </ion-list>
 </ion-content>

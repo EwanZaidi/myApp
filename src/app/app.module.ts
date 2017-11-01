@@ -17,6 +17,8 @@ import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFireModule} from 'angularfire2';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -43,7 +45,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PlayerListService
+    PlayerListService,
+    LaunchNavigator
   ]
 })
 export class AppModule {}

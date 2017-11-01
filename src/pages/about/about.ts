@@ -7,6 +7,8 @@ import { NavController } from 'ionic-angular';
 })
 export class AboutPage {
 
+  standing: String = "man";
+
   constructor(public navCtrl: NavController) {
 
   }

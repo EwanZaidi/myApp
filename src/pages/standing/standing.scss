@@ -3,7 +3,7 @@ page-venue{
 }
 
 .bg-gray {
-    background-color: #dadada
+    background-color: #f7f7f7;
 }
 
 .h30 {
@@ -12,4 +12,31 @@ page-venue{
 
 .bg-white{
     background-color: #FFF;
+}
+
+.headerer{
+    background-color:lightgrey;
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    font-size: 8px;
+}
+
+.headerer:last-child {
+    border-right: solid 1px grey;
+}
+
+.coll {
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    font-size: 11px;
+  }
+
+.coll:last-child {
+    border-right: solid 1px grey;
+}
+
+.row:last-child .coll {
+    border-bottom: solid 1px grey;
 }

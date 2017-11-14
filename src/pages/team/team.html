@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>Teams</ion-title>
+    </ion-toolbar>
+    <ion-segment [(ngModel)]="standing" color="danger" class="bg-white">
+      <ion-segment-button value="man">
+        <ion-icon name="man"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="woman">
+        <ion-icon name="woman"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-header>
+  
+  
+  <ion-content padding class="bg-gray" [ngSwitch]="standing">
+    <ion-list *ngSwitchCase="'man'">
+      <ion-list>
+        <ion-list-header color="header">
+          Boys Team
+        </ion-list-header>
+          <div *ngFor="let team of teams | async">
+            <ion-item text-wrap class="fs11" *ngIf="team.data.category == 'Lelaki'" (click)="teamDetails(team)">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-10>
+                    {{team.data.team_name}}
+                  </ion-col>
+                  <ion-col icon-end>
+                    <ion-icon name="ios-arrow-dropright">
+                    </ion-icon>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </div>
+      </ion-list>
+    </ion-list>
+    <ion-list *ngSwitchCase="'woman'">
+        <ion-list-header color="header">
+          Girls Team
+        </ion-list-header>
+        <div *ngFor="let team of teams | async">
+            <ion-item text-wrap class="fs11" *ngIf="team.data.category == 'Perempuan'" (click)="teamDetails(team)">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-10>
+                    {{team.data.team_name}}
+                  </ion-col>
+                  <ion-col icon-end>
+                    <ion-icon name="ios-arrow-dropright">
+                    </ion-icon>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </div>
+    </ion-list>
+  </ion-content>

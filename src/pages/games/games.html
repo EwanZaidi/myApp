@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Games</ion-title>
+  </ion-toolbar>
+  <ion-segment [(ngModel)]="day" color="danger" class="bg-white">
+    <ion-segment-button value="day1">
+      <p>16 Nov</p>
+    </ion-segment-button>
+    <ion-segment-button value="day2">
+      <p>17 Nov</p>
+    </ion-segment-button>
+     <ion-segment-button value="day3">
+      <p>18 Nov</p>
+    </ion-segment-button>
+    <ion-segment-button value="day4">
+      <p>19 Nov</p>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+
+<ion-content padding class="bg-gray" [ngSwitch]="day">
+  <ion-list *ngSwitchCase="'day1'">
+    <div *ngFor="let match of matches | async">
+        <ion-card *ngIf="match.data.match_no <= 13">
+          <ion-card-header style="font-size: 10px">
+            Match No : {{match.data.match_no}}<br>
+            Match Category : {{match.data.category}}
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col col-3 align-self-center text-center>
+                <img src="assets/imgs/{{match.data.team1_id}}.png" class="h20 w20 r50">
+                <p style="font-size:10px">{{match.data.team1_name}}</p>
+              </ion-col>
+              <ion-col col-6>
+                <ion-row>
+                  <ion-col col-12 align-self-center text-center>
+                    <ion-icon md="md-pin" style="font-size:12px"></ion-icon>
+                    <p style="font-size:10px">Taman Bagan Court</p>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-4 align-self-center text-center>
+                    <h5>{{match.data.team1_score}}</h5>
+                  </ion-col>
+                  <ion-col col-4 align-self-center text-center>
+                    <h6 ion-text color="danger">VS</h6>
+                  </ion-col>
+                  <ion-col col-4 align-self-center text-center>
+                    <h5>{{match.data.team2_score}}</h5>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-12 align-self-center text-center>
+                    <ion-icon md="md-time" style="font-size:12px"></ion-icon>
+                    <p style="font-size:10px"> 08:00am</p>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+              <ion-col col-3 align-self-center text-center>
+                <img src="assets/imgs/{{match.data.team2_id}}.png" class="h20 w20 r50">
+                <p style="font-size:10px">{{match.data.team2_name}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+    </div>
+  </ion-list>
+  <ion-list *ngSwitchCase="'day2'">
+    <div *ngFor="let match of matches | async">
+      <ion-card *ngIf="match.data.match_no >= 14 && match.data.match_no <= 25">
+        <ion-card-header style="font-size: 10px">
+          Match No : {{match.data.match_no}}
+          <br> Match Category : {{match.data.category}}
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col col-3 align-self-center text-center>
+              <img src="assets/imgs/{{match.data.team1_id}}.png" class="h20 w20 r50">
+              <p style="font-size:10px">{{match.data.team1_name}}</p>
+            </ion-col>
+            <ion-col col-6>
+              <ion-row>
+                <ion-col col-12 align-self-center text-center>
+                  <ion-icon md="md-pin" style="font-size:12px"></ion-icon>
+                  <p style="font-size:10px">Taman Bagan Court</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-4 align-self-center text-center>
+                  <h5>{{match.data.team1_score}}</h5>
+                </ion-col>
+                <ion-col col-4 align-self-center text-center>
+                  <h6 ion-text color="danger">VS</h6>
+                </ion-col>
+                <ion-col col-4 align-self-center text-center>
+                  <h5>{{match.data.team2_score}}</h5>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-12 align-self-center text-center>
+                  <ion-icon md="md-time" style="font-size:12px"></ion-icon>
+                  <p style="font-size:10px"> 08:00am</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-3 align-self-center text-center>
+              <img src="assets/imgs/{{match.data.team2_id}}.png" class="h20 w20 r50">
+              <p style="font-size:10px">{{match.data.team2_name}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-list>
+  <ion-list *ngSwitchCase="'day3'">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <h1 style="text-align: center; font-size: 12px">SCHEDULE TO BE UPDATE</h1>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    </ion-list>
+    <ion-list *ngSwitchCase="'day4'">
+      <ion-card>
+        <ion-card-content>
+          <ion-row>
+            <h1 style="text-align: center; font-size: 12px">SCHEDULE TO BE UPDATE</h1>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </ion-content>

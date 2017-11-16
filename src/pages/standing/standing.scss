@@ -15,6 +15,16 @@ page-venue{
 }
 
 .headerer{
+    text-align: center !important;
+    background-color:lightgrey;
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    font-size: 8px;
+}
+
+.headerer1{
+    text-align: left !important;
     background-color:lightgrey;
     border: solid 1px grey;
     border-bottom-style: none;
@@ -26,7 +36,18 @@ page-venue{
     border-right: solid 1px grey;
 }
 
-.coll {
+.coll1 {
+    text-align: left !important;
+    font-size: 9px !important;
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    font-size: 11px;
+  }
+
+  .coll {
+    text-align: center !important;
+    font-size: 9px !important;
     border: solid 1px grey;
     border-bottom-style: none;
     border-right-style: none;
@@ -37,6 +58,14 @@ page-venue{
     border-right: solid 1px grey;
 }
 
+.coll1:last-child {
+    border-right: solid 1px grey;
+}
+
 .row:last-child .coll {
+    border-bottom: solid 1px grey;
+}
+
+.row:last-child .coll1 {
     border-bottom: solid 1px grey;
 }

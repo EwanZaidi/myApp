@@ -20,6 +20,7 @@ import { AngularFireModule} from 'angularfire2';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -34,7 +35,7 @@ import { LaunchNavigator } from '@ionic-native/launch-navigator';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

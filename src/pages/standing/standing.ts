@@ -36,15 +36,15 @@ export class StandingPage {
           const data = a.payload.doc.data() as Group;
           const id = a.payload.doc.id;
           // let x = [{name:"testing 1"},{name:"testing 2"}];
-          let teamList = this.afs.collection('groups/'+id+"/team_list").snapshotChanges()
+          let teamList = this.afs.collection('groups/'+id+"/team_list", ref => {
+            return ref.orderBy('points', 'desc')
+          }).snapshotChanges()
             .map(actions => {
               return actions.map(b => {
                 const data = b.payload.doc.data() as TeamList;
                 const id = b.payload.doc.id;
-
-                let matchList = this.afs.collection('matches', ref => 
-                  ref.where('team1_id', '==', id)).valueChanges();
-                return { id, data, matchList};
+                
+                return { id, data};
 
               })
             })

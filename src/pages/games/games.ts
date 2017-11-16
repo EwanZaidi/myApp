@@ -3,6 +3,7 @@ import { Matches } from './../../model/matches.model';
 import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'page-games',
@@ -18,10 +19,6 @@ export class GamesPage implements OnInit{
 
   teamList: AngularFirestoreCollection<Matches>;
   teams: any;
-  teamID: String;
-
-  testID : String = "LA2";
-  gameCount : number = 0;
 
   constructor(public navCtrl: NavController, private afs: AngularFirestore) {
 
@@ -36,11 +33,11 @@ export class GamesPage implements OnInit{
         return actions.map(a => {
           const data = a.payload.doc.data() as Matches;
           const id = a.payload.doc.id;
-
           
           return { id, data };
         })
       })
+
 
     
   }
